@@ -18,22 +18,22 @@ class Todo extends Component {
 
   render(){
     return(
-      <p data-todos-index={this.props.todo.id}>
-        <span onClick={ this.editClickedTodo }>
-          {this.props.todo.body}
-        </span>
-        { this.props.editingTodoId === this.props.todo._id ?
-          <TodoForm
-            autoFocus={true}
-            buttonName="Update Todo!"
-            onUpdateTodo={this.props.onUpdateTodo}
-          /> : '' }
-        <span
-          className='deleteButton'
-          onClick={ this.deleteClickedTodo }>
-            (X)
-        </span>
-      </p>
+        <div data-todos-index={this.props.todo.id}>
+          <span onClick={ this.editClickedTodo }>
+            {this.props.todo.body}
+          </span>
+          { this.props.editingTodoId === this.props.todo._id ?
+            <TodoForm
+              autoFocus={true}
+              buttonName="Update Todo!"
+              onUpdateTodo={this.props.onUpdateTodo}
+            /> : '' }
+          <span
+            className='deleteButton'
+            onClick={ this.deleteClickedTodo }>
+              (X)
+          </span>
+        </div>
     )
   }
 }
